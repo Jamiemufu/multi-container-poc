@@ -83,7 +83,16 @@ import VuetifyLogo from '~/components/VuetifyLogo.vue'
 export default {
   components: {
     Logo,
-    VuetifyLogo
+    VuetifyLogo,
+  },
+  data() {
+    return {
+      homepage: ''
+    }
+  },
+  async asyncData({ $axios }) {
+    const homepage = await $axios.$get('/api/homepages/1')
+    return { homepage }
   }
 }
 </script>
