@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd162c20-9600-431d-b221-4f10005a74c4" name="Default Changelist" comment="Initial Commit">
-      <change beforePath="$PROJECT_DIR$/LOCAL_WORKING/nginx/logs/access.log" beforeDir="false" afterPath="$PROJECT_DIR$/LOCAL_WORKING/nginx/logs/access.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LOCAL_WORKING/nginx/logs/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/LOCAL_WORKING/nginx/logs/error.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.api" beforeDir="false" afterPath="$PROJECT_DIR$/.env.api" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/.env" beforeDir="false" afterPath="$PROJECT_DIR$/api/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/api/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/api/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
