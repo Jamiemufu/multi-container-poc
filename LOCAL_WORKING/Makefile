@@ -114,6 +114,13 @@ yarn-outdated:
 outdated: yarn-update composer-outdated
 
 #-----------------------------------------------------------
+# Databases
+#-----------------------------------------------------------
+
+migrate:
+	docker-compose exec php php bin/console doctrine:migrations:migrate
+
+#-----------------------------------------------------------
 # Installation
 #-----------------------------------------------------------
 
@@ -129,7 +136,7 @@ autoload:
 	docker-compose exec php composer dump-autoload
 
 # Install the environment
-install: build env-api env-client composer-install rc
+install: build env-api env-client composer-install migrate rc
 
 
 #-----------------------------------------------------------
