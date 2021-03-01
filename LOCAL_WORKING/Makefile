@@ -114,19 +114,11 @@ yarn-outdated:
 outdated: yarn-update composer-outdated
 
 #-----------------------------------------------------------
-# API Platform stuff...
-#-----------------------------------------------------------
-
-platform-schema:
-	docker-compose exec php php bin/console doctrine:database:create
-	docker-compose exec php php bin/console doctrine:schema:create
-
-#-----------------------------------------------------------
 # Databases
 #-----------------------------------------------------------
 
-migrate:
-	docker-compose exec php php bin/console doctrine:migrations:migrate
+create:
+	docker-compose exec php php bin/console doctrine:schema:create
 
 #-----------------------------------------------------------
 # Installation
@@ -139,12 +131,13 @@ env-api:
 # Copy the NuxtJS environment file
 env-client:
 	cp ../.env.client ../client/.env
+
 # PHP composer autoload command
 autoload:
 	docker-compose exec php composer dump-autoload
 
 # Install the environment
-install: build env-api env-client composer-install platform-schema migrate rc
+install: build env-api env-client composer-install create rc
 
 
 #-----------------------------------------------------------
