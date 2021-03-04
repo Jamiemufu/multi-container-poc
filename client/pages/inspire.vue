@@ -7,13 +7,30 @@
         class="mb-5"
       >
       <blockquote class="blockquote">
-        &#8220;First, solve the problem. Then, write the code.&#8221;
-        <footer>
-          <small>
-            <em>&mdash;John Johnson</em>
-          </small>
-        </footer>
+        {{ homepage }}
       </blockquote>
     </v-col>
   </v-row>
 </template>
+
+<script>
+import Logo from '~/components/Logo.vue'
+import VuetifyLogo from '~/components/VuetifyLogo.vue'
+import axios from "axios";
+
+export default {
+  components: {
+    Logo,
+    VuetifyLogo,
+  },
+  data() {
+    return {
+      homepage: ''
+    }
+  },
+  async asyncData({ $axios }) {
+    const homepage = await $axios.$get('/api/homepages')
+    return { homepage }
+  }
+}
+</script>

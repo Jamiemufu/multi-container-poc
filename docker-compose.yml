@@ -28,7 +28,7 @@ services:
       - ./api:/var/www/api
     environment:
       # If you down want to use xDebug, set remote_enable=0
-      XDEBUG_CONFIG: "remote_enable=1"
+      # XDEBUG_CONFIG: "remote_enable=1"
       PHP_IDE_CONFIG: "serverName=Docker"
     links:
       - mariadb
@@ -43,7 +43,7 @@ services:
       # Temp volume to allow using dumps
       # - ./LOCAL_WORKING/mariadb/dumps/:/tmp/
     ports:
-      - 3306:3306
+      - 3306
     environment:
       - MYSQL_DATABASE=multi_test
       - MYSQL_ROOT_PASSWORD=root
