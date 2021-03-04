@@ -1,4 +1,4 @@
 FROM mariadb:latest
 
-//test 
+# test for db issues
 RUN sudo chown 999:999 ./db/data
