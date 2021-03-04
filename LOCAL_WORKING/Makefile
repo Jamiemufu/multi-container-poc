@@ -137,7 +137,8 @@ autoload:
 	docker-compose exec php composer dump-autoload
 
 # Install the environment
-install: build env-api env-client composer-install create rc
+#install: build env-api env-client composer-install create rc
+install: build env-api env-client composer-install rc
 
 
 #-----------------------------------------------------------
