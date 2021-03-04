@@ -46,7 +46,6 @@ services:
       - 3306:3306
     environment:
       - MYSQL_DATABASE=multi_test
-      - MYSQL_PASSWORD=root
       - MYSQL_ROOT_PASSWORD=root
   # Client container
   client:
