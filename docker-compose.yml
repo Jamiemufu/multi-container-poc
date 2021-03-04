@@ -41,7 +41,7 @@ services:
       # Database volume
       - database:/var/lib/mariadb
       # Temp volume to allow using dumps
-      - ./LOCAL_WORKING/mariadb/dumps/:/tmp/
+      # - ./LOCAL_WORKING/mariadb/dumps/:/tmp/
     ports:
       - 3306:3306
     environment:
