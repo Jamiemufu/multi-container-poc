@@ -13,9 +13,9 @@ services:
       - ./LOCAL_WORKING/nginx/logs:/var/log/nginx
     ports:
       # Client port
-      - 8080:80
+      - 80:80
       # API port
-      - 8081:81
+      - 81:81
     links:
       - client
       - php
