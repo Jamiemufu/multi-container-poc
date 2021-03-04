@@ -14,8 +14,6 @@ services:
     ports:
       # Client port
       - 80:80
-      # API port
-      - 81:81
     links:
       - client
       - php
@@ -26,10 +24,6 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./api:/var/www/api
-    environment:
-      # If you down want to use xDebug, set remote_enable=0
-      # XDEBUG_CONFIG: "remote_enable=1"
-      PHP_IDE_CONFIG: "serverName=Docker"
     links:
       - mariadb
   # PostgreSQL database container
@@ -40,10 +34,6 @@ services:
     volumes:
       # Database volume
       - database:/var/lib/mariadb
-      # Temp volume to allow using dumps
-      # - ./LOCAL_WORKING/mariadb/dumps/:/tmp/
-    ports:
-      - 3306
     environment:
       - MYSQL_DATABASE=multi_test
       - MYSQL_ROOT_PASSWORD=root

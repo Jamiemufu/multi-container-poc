@@ -13,22 +13,21 @@ You need to have docker installed on your machine to create the local environmen
 
 ## Using the Makerfile
 
-Navigate to ```LOCAL_WORKING/``` In terminal run ```make install```
+Navigate to ```LOCAL_WORKING/``` In terminal run ```make install-local```
 
-Then visit [http://localhost:8081/homepage](http://localhost:8081/homepage) url in your browser - if the installer ran correctly it should show:
-```
-Saved new homepage with id 1
-```
-This essentially is just storing a very basic homepage entity in the database - to be fetched from the front-end app. (testing purposes)...
+## Installing in PROD
 
-Also for testing purposes if you visit [http://localhost:8081/api](http://localhost:8081/api) - You will see our endpoints and documentation for our API.
+Navigate to ```LOCAL_WORKING/``` In terminal run ```make install-prod```
 
-Then visit [http://localhost:8080](http://localhost:8080/) url in your browser. And you will see the Nuxt application. (Front end container)
-This is just the boilerplate that comes with Nuxt - but if you use vue dev tools - And go to
-```
-<Vapp> -> <Vmain> -> <Nuxt> -> <PagesIndex>
-```
-You will see our homepage object fetched via axios and the endpoint ```'/api/homepages/1'```
+## What's the difference?
+
+```make install-local``` will run docker-compose with an additional override docker-compose file. This will expose ports [81, 3306]. In production these ports will not be accessible.
+
+This allows the developer locally - to see API documentation and access API Platform UI via [http://localhost:81/api](http://localhost:81/api)
+
+Then visit [http://localhost](http://localhost) url in your browser. And you will see the Nuxt application. (Front end container)
+This is just the boilerplate that comes with Nuxt. the index of the nuxt application will send a post request off to the API saving a homepage - so we can test that its working. If you click the 
+'check homepage' button - you will be forwarded onto a page which is just spitting out the homepages retreived from the API.
 
 # API, Client folders
 

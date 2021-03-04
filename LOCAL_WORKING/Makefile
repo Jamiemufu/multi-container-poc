@@ -39,15 +39,19 @@ logs-client:
 lc: logs-client
 
 # Build and up docker containers
-build:
-	docker-compose up -d --build
+local-build:
+	docker-compose -f ../docker-compose.yml -f ../docker-compose.override.yml up -d --build
+
+# Build containers for prod
+prod-build:
+	docker-compose -f ../docker-compose.yml up -d --build
 
 # Build containers with no cache option
 build-no-cache:
 	docker-compose build --no-cache
 
 # Build and up docker containers
-rebuild: down build
+rebuild: down local-build
 
 # Run terminal of the php container
 php:
@@ -136,8 +140,12 @@ env-client:
 autoload:
 	docker-compose exec php composer dump-autoload
 
-# Install the environment
-install: build env-api env-client composer-install create rc
+# Install the environment locally
+install-local: local-build env-api env-client composer-install create rc
+
+# Install the environment for PROD
+install-prod: prod-build env-api env-client composer-install create rc
+
 #install: build env-api env-client composer-install rc
 
 
